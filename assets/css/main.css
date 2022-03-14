@@ -3513,17 +3513,19 @@ input, select, textarea {
 			#banner .content .image {
 				/* border-radius: 100%; */
 				display: inline-block;
-				height: 10.6em;
+				/* height: 10.6em; */
 				margin-left: 3em;
 				vertical-align: middle;
-				width: 19.7em;
-				
+				/* width: 19.7em; */
+				background-size: cover;
+				background-repeat: no-repeat;
+				max-width: max-content;
+				height: auto;
 			}
 
 				#banner .content .image img {
 					/* border-radius: 100%; */
 					display: block;
-					/* object-fit: contain !important; */
 				}
 
 	body.is-touch #banner {
@@ -3852,10 +3854,10 @@ input, select, textarea {
 						font-size: 1.5em;
 					}
 
-					#banner .content .image {
+					/* #banner .content .image {
 						height: 9em;
 						width: 9em;
-					}
+					} */
 
 		/* Nav */
 
