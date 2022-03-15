@@ -3855,10 +3855,16 @@ input, select, textarea {
 						font-size: 1.5em;
 					}
 
-					/* #banner .content .image {
-						height: auto;
-						max-width: 9em;
-					} */
+					#banner .content .image {
+						width: 20em;
+						height: 20em;
+						background-image: url(logo.png);
+						background-size: contain !important;
+						background-position: center !important;
+						object-fit: cover;
+						position: relative;
+						overflow: hidden;
+					}
 
 		/* Nav */
 
