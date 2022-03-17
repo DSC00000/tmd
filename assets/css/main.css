@@ -3855,16 +3855,17 @@ input, select, textarea {
 						font-size: 1.5em;
 					}
 
-					#banner .content .image {
+					#banner .content .image img{
 						width: 20em;
 						height: 20em;
 						display: block;
-						/* background-image: url("/tmd/images/logoSmall.png"); */
-						/* background-size: contain;
+						padding: 0%;
+						background-image: url("/tmd/images/logoSmall.png");
+						background-size: contain;
 						background-position: center;
 						object-fit: cover;
 						position: relative;
-						overflow: hidden;  */
+						overflow: hidden;
 					}
 
 		/* Nav */
