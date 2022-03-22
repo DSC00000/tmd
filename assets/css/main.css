@@ -2563,7 +2563,21 @@ input, select, textarea {
 			.image.fit img {
 				width: 100%;
 			}
+/*  Image Zoom */
+	#zoomA {
+  		/* OPTIONAL DIMENSIONS */
+  		/* width: 100%; */
+  		/* height: auto; */
+		position: relative;
 
+  		/* ANIMATE ZOOM */
+  		transition: transform ease-in-out 0.3s;
+}
+	#zoomA:hover { 
+		/* TRANSFORM ON HOVER */
+		transform: scale(1.5); 
+		z-index: 10;
+}
 /* List */
 
 	ol {
