@@ -3874,7 +3874,7 @@ input, select, textarea {
 						height: 20em;
 						display: block;
 						padding: 0%;
-						background-image: url("/tmd/images/logoSmall.png");
+						background-image: url("/images/logoSmall.png");
 						background-size: contain;
 						background-position: center;
 						object-fit: cover;
