@@ -2578,6 +2578,15 @@ input, select, textarea {
 		transform: scale(1.5); 
 		z-index: 10;
 }
+
+/* Video */
+	.video {
+		position: inherit;
+		width: 100%;
+    	border-radius: 4px; 
+    	overflow: hidden; 
+	}
+
 /* List */
 
 	ol {
