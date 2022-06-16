@@ -2575,7 +2575,7 @@ input, select, textarea {
 }
 	#zoomA:hover { 
 		/* TRANSFORM ON HOVER */
-		transform: scale(1.5); 
+		transform: scale(2.0); 
 		z-index: 10;
 }
 
