@@ -73,6 +73,9 @@ input, select, textarea {
 }
 
 /* Basic */
+	.hidden {
+		display: none;
+	}
 
 	html {
 		box-sizing: border-box;
