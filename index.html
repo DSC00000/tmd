@@ -190,7 +190,7 @@
 							<h2>Any question, any time.</h2>
 						</header>
 						<div class="box alt">
-							<form class="cta" method="post" data-netlify="true" onSubmit="submit" netlify-honeypot="bot-field">
+							<form class="cta" method="post" data-netlify="true" onSubmit="submit">
 								<div class="col-8 col-12-xsmall pad1">
 									<input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
 								</div>
@@ -204,7 +204,7 @@
 									<textarea class="form-control" id="message" name="message" placeholder="Your Message" required></textarea>
 								</div>
 								<div class="hidden">
-									<textarea class="bot-field" id="bot-field" name="bot-field" placeholder="bot-field"></textarea>
+									<textarea class="bot-field" id="bot-field" name="bot-field" placeholder="bot-field" netlify-honeypot="bot-field"></textarea>
 								</div>
 								<div class="gtr col-8 col-12-xsmall mar1">
 									<input type="submit" value="Contact Us" class="button primary"/>
