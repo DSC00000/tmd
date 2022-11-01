@@ -55,15 +55,16 @@
 							</header>
 						</div>
                             <div class="box alt">
-                                <form class="cta" method="post" onSubmit="submit">
+                                <!-- <form id="serialForm" class="cta" method="post" onSubmit="submit">
                                     <div class="col-8 col-12-xsmall pad1">
                                         <input type="text" class="form-control" id="serial" name="serial" placeholder="Machine Serial" required>
                                     </div>
                                     
-                                    <div class="gtr col-8 col-12-xsmall mar1">
-                                        <input type="submit" id="getData" class="btn btn-primary"/>
-                                    </div>
-                                </form>
+                                </form> -->
+
+								<div class="gtr col-8 col-12-xsmall mar1">
+									<input type="submit" id="getData" class="btn btn-primary"/>
+								</div>
                             </div>
                     </div>
 
@@ -71,7 +72,7 @@
                         <table class="table table-striped" id="dataTable">
                             <thead>
                                 <tr>
-                                <th>Date of Last Telemetry Sample:</th>
+                                <th>Machine Serial:</th>
 								<th>Hours On:</th>
                                 <th>Hours Running Product:</th>
                                 <th>Louver Count:</th>
@@ -164,14 +165,14 @@
                 getData.addEventListener('click',(e) => {
                     $('#dataTable td').remove();
 
-                    const dbRef = ref(database, 'production/');
+                    const dbRef = ref(database, `production/`);
 
                     onValue(dbRef, (snapshot) => {
                         snapshot.forEach((childSnapshot) => {
                             const childKey = childSnapshot.key;
                             const childData = childSnapshot.val();
 
-                            var row = "<tr><td>"    + childData.Date_Uploaded                         + "</td><td>"
+                            var row = "<tr><td>"    + childData.Machine_Serial                        + "</td><td>"
                                                     + childData.Lifetime_Hours_On                     + "</td><td>"
                                                     + childData.Lifetime_Hours_Running_Product        + "</td><td>"
                                                     + childData.Lifetime_Louver_Count                 + "</td><td>"
