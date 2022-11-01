@@ -55,11 +55,11 @@
                             <div class="box alt">
                                 <form class="cta" method="post" onSubmit="submit">
                                     <div class="col-8 col-12-xsmall pad1">
-                                        <input type="text" class="form-control" id="serial" name="serial" placeholder="Machine Serial" required>
+                                        <input type="text" class="form-control" id="getData" name="serial" placeholder="Machine Serial" required>
                                     </div>
                                     
                                     <div class="gtr col-8 col-12-xsmall mar1">
-                                        <input type="submit" id="getData" class="btn btn-primary"/>
+                                        <input type="submit" class="btn btn-primary"/>
                                     </div>
                                 </form>
                             </div>
@@ -159,7 +159,7 @@
                 const app = initializeApp(firebaseConfig);
                 const database = getDatabase(app)
 
-                getData.addEventListener('click',(e) => {
+                getData.addEventListener(onsubmit,(e) => {
                     $('#dataTable td').remove();
 
                     const dbRef = ref(database, 'production/');
