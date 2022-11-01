@@ -49,17 +49,19 @@
 				<div id="main" class="wrapper style1">
 					
                     <div class="container">
-                        <header>
-							<h2>Machine Production Metrics</h2>
-						</header>
+						<div class="content">
+							<header>
+								<h2><strong>Machine Production Metrics</strong></h2>
+							</header>
+						</div>
                             <div class="box alt">
                                 <form class="cta" method="post" onSubmit="submit">
                                     <div class="col-8 col-12-xsmall pad1">
-                                        <input type="text" class="form-control" id="getData" name="serial" placeholder="Machine Serial" required>
+                                        <input type="text" class="form-control" id="serial" name="serial" placeholder="Machine Serial" required>
                                     </div>
                                     
                                     <div class="gtr col-8 col-12-xsmall mar1">
-                                        <input type="submit" class="btn btn-primary"/>
+                                        <input type="submit" id="getData" class="btn btn-primary"/>
                                     </div>
                                 </form>
                             </div>
@@ -70,13 +72,13 @@
                             <thead>
                                 <tr>
                                 <th>Date of Last Telemetry Sample:</th>
+								<th>Hours On:</th>
+                                <th>Hours Running Product:</th>
                                 <th>Louver Count:</th>
                                 <th>Louvers Drilled:</th>
+								<th>Louvers Notched:</th>
                                 <th>Louvers Pinned:</th>
-                                <th>Louvers Notched:</th>
                                 <th>Louvers Stapled to Tilt Rod:</th>
-                                <th>Hours On:</th>
-                                <th>Hours Running Product:</th>
                                 </tr>
                             </thead>
 
@@ -146,31 +148,29 @@
                 import { getDatabase, ref, child, onValue } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
                        
                 const firebaseConfig = {
-					apiKey: "AIzaSyCYsOexRfQS1eCKXf4UXasY1N8HQ-ckWF0",
-					authDomain: "telemetry-upload.firebaseapp.com",
-					databaseURL: "https://telemetry-upload-default-rtdb.firebaseio.com",
-					projectId: "telemetry-upload",
-					storageBucket: "telemetry-upload.appspot.com",
-					messagingSenderId: "56055561946",
-					appId: "1:56055561946:web:0867c4e789536379df6fe3",
-					measurementId: "G-HRW4L953RX"
-				};
+                  apiKey: "AIzaSyCYsOexRfQS1eCKXf4UXasY1N8HQ-ckWF0",
+                  authDomain: "telemetry-upload.firebaseapp.com",
+                  databaseURL: "https://telemetry-upload-default-rtdb.firebaseio.com",
+                  projectId: "telemetry-upload",
+                  storageBucket: "telemetry-upload.appspot.com",
+                  messagingSenderId: "56055561946",
+                  appId: "1:56055561946:web:9c0ace75c3352ac0df6fe3",
+                  measurementId: "G-T3VQ6Q4R3M"
+                };
               
                 const app = initializeApp(firebaseConfig);
                 const database = getDatabase(app)
 
-                getData.addEventListener(onsubmit,(e) => {
+                getData.addEventListener('click',(e) => {
                     $('#dataTable td').remove();
 
                     const dbRef = ref(database, 'production/');
-                    var rowNum = 0;
 
                     onValue(dbRef, (snapshot) => {
                         snapshot.forEach((childSnapshot) => {
                             const childKey = childSnapshot.key;
                             const childData = childSnapshot.val();
 
-                            rowNum += 1;
                             var row = "<tr><td>"    + childData.Date_Uploaded                         + "</td><td>"
                                                     + childData.Lifetime_Hours_On                     + "</td><td>"
                                                     + childData.Lifetime_Hours_Running_Product        + "</td><td>"
