@@ -169,7 +169,7 @@
 
                     const dbRef = ref(database, `production/`);	//Look specifically at the production collection in the DB
 
-                    onValue(dbRef, (snapshot) => {				//Go through each production child and assign it to an array
+                    onValue(dbRef, (snapshot) => {				//Go through each production child and assign it to a single variable
                         snapshot.forEach((childSnapshot) => {
                             const childKey = childSnapshot.key;
                             const childData = childSnapshot.val();
@@ -185,7 +185,7 @@
 													+ childData.Lifetime_Stile_Count 					+ "</td><td>"
 													+ childData.Lifetime_Stile_Linear_Feet 				+ "</td></tr>";
                             
-                            $(row).appendTo(dataTable)    		//Take the child array and stick in the HTML table                        
+                            $(row).appendTo(dataTable)    		//Take the child variable and stick in the HTML table                        
                         });
                     }, {onlyOnce: true});						//Do the above one time
                 });
