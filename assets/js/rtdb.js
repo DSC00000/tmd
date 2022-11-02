@@ -23,7 +23,6 @@
 
         onValue(dbRef, (snapshot) => {				//Go through each production child and assign it to a single variable
             snapshot.forEach((childSnapshot) => {
-                const childKey = childSnapshot.key;
                 const childData = childSnapshot.val();
 
                 var row = "<tr><td>"    + childData.Machine_Serial                        	+ "</td><td>"
