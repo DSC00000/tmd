@@ -143,12 +143,12 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+		<!-- JS Script to grab Firebase data -->
             <script type="module">         
                 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
                 import { getDatabase, ref, child, onValue } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
-                       
-                const firebaseConfig = {
+                      
+                const firebaseConfig = {						//Firebase App Data required for API
                   apiKey: "AIzaSyCYsOexRfQS1eCKXf4UXasY1N8HQ-ckWF0",
                   authDomain: "telemetry-upload.firebaseapp.com",
                   databaseURL: "https://telemetry-upload-default-rtdb.firebaseio.com",
@@ -158,16 +158,16 @@
                   appId: "1:56055561946:web:9c0ace75c3352ac0df6fe3",
                   measurementId: "G-T3VQ6Q4R3M"
                 };
-              
-                const app = initializeApp(firebaseConfig);
+				
+                const app = initializeApp(firebaseConfig);		//Standard database initialization
                 const database = getDatabase(app)
-
-                getData.addEventListener('click',(e) => {
+				
+                getData.addEventListener('click',(e) => {		//Start the script on click for query button
                     $('#dataTable td').remove();
 
-                    const dbRef = ref(database, `production/`);
+                    const dbRef = ref(database, `production/`);	//Look specifically at the production collection in the DB
 
-                    onValue(dbRef, (snapshot) => {
+                    onValue(dbRef, (snapshot) => {				//Go through each production child and assign it to an array
                         snapshot.forEach((childSnapshot) => {
                             const childKey = childSnapshot.key;
                             const childData = childSnapshot.val();
@@ -181,9 +181,9 @@
                                                     + childData.Lifetime_Louvers_Pinned               + "</td><td>"
                                                     + childData.Lifetime_Louvers_Stapled_to_Tilt_Rod  + "</td></tr>";
                             
-                            $(row).appendTo(dataTable)                            
+                            $(row).appendTo(dataTable)    		//Take the child array and stick in the HTML table                        
                         });
-                    }, {onlyOnce: true});
+                    }, {onlyOnce: true});						//Do the above one time
                 });
             </script>
 
