@@ -1,5 +1,6 @@
-import "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
 import "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
+import "https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"
 
     const firebaseConfig = {						//Firebase App Data required for API
         apiKey: "AIzaSyCYsOexRfQS1eCKXf4UXasY1N8HQ-ckWF0",
@@ -12,7 +13,7 @@ import "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
         measurementId: "G-T3VQ6Q4R3M"
     };
 
-    firebase.initializeApp(firebaseConfig);
+    const app = initializeApp(firebaseConfig);
 
     // 1) Create a new firebaseui.auth instance stored to our local variable ui
     const ui = new firebaseui.auth.AuthUI(firebase.auth())

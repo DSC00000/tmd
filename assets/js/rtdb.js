@@ -1,6 +1,5 @@
-//<script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
-    import { getDatabase, ref, child, onValue } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+import { getDatabase, ref, child, onValue } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
             
     const firebaseConfig = {						//Firebase App Data required for API
         apiKey: "AIzaSyCYsOexRfQS1eCKXf4UXasY1N8HQ-ckWF0",
@@ -40,4 +39,3 @@
             });
         }, {onlyOnce: true});						//Do the above one time
     });
-// </script>
