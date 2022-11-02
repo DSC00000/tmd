@@ -80,6 +80,8 @@
 								<th>Louvers Notched:</th>
                                 <th>Louvers Pinned:</th>
                                 <th>Louvers Stapled to Tilt Rod:</th>
+								<th>Stile Count:</th>
+								<th>Stile Total Linear Feet:</th>
                                 </tr>
                             </thead>
 
@@ -172,14 +174,16 @@
                             const childKey = childSnapshot.key;
                             const childData = childSnapshot.val();
 
-                            var row = "<tr><td>"    + childData.Machine_Serial                        + "</td><td>"
-                                                    + childData.Lifetime_Hours_On                     + "</td><td>"
-                                                    + childData.Lifetime_Hours_Running_Product        + "</td><td>"
-                                                    + childData.Lifetime_Louver_Count                 + "</td><td>"
-                                                    + childData.Lifetime_Louvers_Drilled              + "</td><td>"
-                                                    + childData.Lifetime_Louvers_Notched              + "</td><td>"
-                                                    + childData.Lifetime_Louvers_Pinned               + "</td><td>"
-                                                    + childData.Lifetime_Louvers_Stapled_to_Tilt_Rod  + "</td></tr>";
+                            var row = "<tr><td>"    + childData.Machine_Serial                        	+ "</td><td>"
+                                                    + childData.Lifetime_Hours_On                     	+ "</td><td>"
+                                                    + childData.Lifetime_Hours_Running_Product        	+ "</td><td>"
+                                                    + childData.Lifetime_Louver_Count                 	+ "</td><td>"
+                                                    + childData.Lifetime_Louvers_Drilled              	+ "</td><td>"
+                                                    + childData.Lifetime_Louvers_Notched              	+ "</td><td>"
+                                                    + childData.Lifetime_Louvers_Pinned               	+ "</td><td>"
+                                                    + childData.Lifetime_Louvers_Stapled_to_Tilt_Rod  	+ "</td><td>"
+													+ childData.Lifetime_Stile_Count 					+ "</td><td>"
+													+ childData.Lifetime_Stile_Linear_Feet 				+ "</td></tr>";
                             
                             $(row).appendTo(dataTable)    		//Take the child array and stick in the HTML table                        
                         });
