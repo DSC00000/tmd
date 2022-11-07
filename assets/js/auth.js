@@ -31,8 +31,8 @@ import "https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js";
     signInFlow: "popup",
     signInSuccessUrl: "signedIn",
     signInOptions: [
-        //firebase.auth.EmailAuthProvider.PROVIDER_ID,
-        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        firebase.auth.EmailAuthProvider.PROVIDER_ID,
+        //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
         // Additional login options should be listed here
         // once they are enabled within the console.
     ],
