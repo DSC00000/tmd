@@ -1,5 +1,5 @@
-import firebase from firebase;
-import firebaseui from firebaseui;
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js"
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js"
 
     const firebaseConfig = {						//Firebase App Data required for API
         apiKey: "AIzaSyCYsOexRfQS1eCKXf4UXasY1N8HQ-ckWF0",
@@ -13,43 +13,43 @@ import firebaseui from firebaseui;
     };
 
     const app = initializeApp(firebaseConfig);
+    const provider = new GoogleAuthProvider();
 
-    // 1) Create a new firebaseui.auth instance stored to our local variable ui
-    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+    const auth = getAuth();
+      signInWithPopup(auth, provider)
+        .then((result) => {
+          // This gives you a Google Access Token. You can use it to access the Google API.
+          const credential = GoogleAuthProvider.credentialFromResult(result);
+          const token = credential.accessToken;
+          // The signed-in user info.
+          const user = result.user;
+          // ...
+        }).catch((error) => {
+          // Handle Errors here.
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          // The email of the user's account used.
+          const email = error.customData.email;
+          // The AuthCredential type that was used.
+          const credential = GoogleAuthProvider.credentialFromError(error);
+          // ...
+        });
 
-    // 2) These are our configurations.
-    var uiConfig = {
-        callbacks: {
-          signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-            // User successfully signed in.
-            // Return type determines whether we continue the redirect automatically
-            // or whether we leave that to developer to handle.
-            return true;
-          },
-          uiShown: function() {
-            // The widget is rendered.
-            // Hide the loader.
-            document.getElementById('loader').style.display = 'none';
-          }
-        },
-        // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-        signInFlow: 'popup',
-        signInSuccessUrl: '<url-to-redirect-to-on-success>',
-        signInOptions: [
-          // Leave the lines as is for the providers you want to offer your users.
-          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-          //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-          //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-          //firebase.auth.GithubAuthProvider.PROVIDER_ID,
-          //firebase.auth.EmailAuthProvider.PROVIDER_ID,
-          //firebase.auth.PhoneAuthProvider.PROVIDER_ID
-        ],
-        // Terms of service url.
-        tosUrl: '<your-tos-url>',
-        // Privacy policy url.
-        privacyPolicyUrl: '<your-privacy-policy-url>'
-      };
-            
-      // The start method will wait until the DOM is loaded.
-      ui.start('#firebaseui-auth-container', uiConfig);
+        getRedirectResult(auth)
+        .then((result) => {
+          // This gives you a Google Access Token. You can use it to access Google APIs.
+          const credential = GoogleAuthProvider.credentialFromResult(result);
+          const token = credential.accessToken;
       
+          // The signed-in user info.
+          const user = result.user;
+        }).catch((error) => {
+          // Handle Errors here.
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          // The email of the user's account used.
+          const email = error.customData.email;
+          // The AuthCredential type that was used.
+          const credential = GoogleAuthProvider.credentialFromError(error);
+          // ...
+        });
