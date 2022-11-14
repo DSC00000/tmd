@@ -1,5 +1,5 @@
-var firebase = require('firebase');
-var firebaseui = require('firebaseui');
+import firebase from firebase;
+import firebaseui from firebaseui;
 
     const firebaseConfig = {						//Firebase App Data required for API
         apiKey: "AIzaSyCYsOexRfQS1eCKXf4UXasY1N8HQ-ckWF0",
