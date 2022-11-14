@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
 import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
-import { GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js"
+import { initApp, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js"
             
     const firebaseConfig = {						//Firebase App Data required for API
         apiKey: "AIzaSyCYsOexRfQS1eCKXf4UXasY1N8HQ-ckWF0",
@@ -84,9 +84,6 @@ import { GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.14.0/fi
         document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
       }
   
-      window.onload = function() {
-        initApp();
-      };
 
 /* --------- Real-time Database ----------- */
     getData.addEventListener('click',(e) => {		//Start the script on click for query button
