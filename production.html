@@ -49,22 +49,25 @@
 							</header>
 						</div>
 
-						<!-- <div class="container" id="firebaseui-auth-container">
-							<div id="loader">Loading...</div>
-						</div> -->
-
-							<div class="container box alt">
-								<!-- <form id="serialForm" class="cta" method="post" onSubmit="submit">
-									<div class="col-8 col-12-xsmall pad1">
-										<input type="text" class="form-control" id="serial" name="serial" placeholder="Machine Serial" required>
-									</div>
-									
-								</form> -->
-
-								<div class="gtr col-8 col-12-xsmall mar1">
-									<input type="submit" id="getData" class="btn btn-primary"/>
-								</div>
+						<div class="container">
+							<p>Sign in with your Google account below.</p>
+				  
+							<!-- Button that handles sign-in/sign-out -->
+							<button disabled class="btn btn-primary" id="quickstart-sign-in">Sign in with Google</button>
+				  
+							<!-- Container where we'll display the user details -->
+							<div class="quickstart-user-details-container">
+							  Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
+							  <div>Firebase auth <code>currentUser</code> object value:</div>
+							  <pre><code id="quickstart-account-details">null</code></pre>
+							  <div>Google OAuth Access Token:</div>
+							  <pre><code id="quickstart-oauthtoken">null</code></pre>
 							</div>
+
+							<div class="gtr col-8 col-12-xsmall mar1">
+								<input type="submit" id="getData" class="btn btn-primary"/>
+							</div>
+						</div>
                     </div>
 
                     <div class="container">
