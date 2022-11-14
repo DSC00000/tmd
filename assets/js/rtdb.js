@@ -35,7 +35,7 @@ import { getDatabase, ref, child, onValue } from "https://www.gstatic.com/fireba
                                         + childData.Lifetime_Stile_Count 					+ "</td><td>"
                                         + childData.Lifetime_Stile_Linear_Feet 				+ "</td></tr>";
                 
-                $(row).appendTo(dataTable)    		//Take the child variable and stick in the HTML table                        
+                $(row).appendTo(dataTable)    		//Take the child variable and stick in the HTML table/DOM                        
             });
         }, {onlyOnce: true});						//Do the above one time
     });
