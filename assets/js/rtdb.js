@@ -17,6 +17,7 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstati
     const database = getDatabase(app);
     const provider = new GoogleAuthProvider();
 
+/* --------AUTHENTICATION --------- */
     const auth = getAuth();
       signInWithPopup(auth, provider)
         .then((result) => {
@@ -53,6 +54,7 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstati
           const credential = GoogleAuthProvider.credentialFromError(error);
         });
 
+/* --------- Real-time Database ----------- */
     getData.addEventListener('click',(e) => {		//Start the script on click for query button
         $('#dataTable td').remove();
 
