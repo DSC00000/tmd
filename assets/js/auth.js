@@ -32,7 +32,6 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstati
           const email = error.customData.email;
           // The AuthCredential type that was used.
           const credential = GoogleAuthProvider.credentialFromError(error);
-          // ...
         });
 
         getRedirectResult(auth)
@@ -51,5 +50,4 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstati
           const email = error.customData.email;
           // The AuthCredential type that was used.
           const credential = GoogleAuthProvider.credentialFromError(error);
-          // ...
         });
