@@ -1,6 +1,10 @@
-import "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
-import "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
-import "https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js";
+// import "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+// import "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
+// import "https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js";
+
+var firebase = require('firebase');
+var firebaseui = require('firebaseui');
+
 
     const firebaseConfig = {						//Firebase App Data required for API
         apiKey: "AIzaSyCYsOexRfQS1eCKXf4UXasY1N8HQ-ckWF0",
