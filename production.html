@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script type= "module" src="assets\js\rtdb.js"></script>
+		<script type= "text/javascript" src="assets\js\rtdb.js"></script>
 	</head>
 
 
@@ -54,16 +54,16 @@
 							<p>Sign in with your Google account below.</p>
 				  
 							<!-- Button that handles sign-in/sign-out -->
-							<button class="btn btn-primary" id="quickstart-sign-in">Sign in with Google</button>
+							<button onclick=initApp() class="btn btn-primary" id="quickstart-sign-in">Sign in with Google</button>
 				  
 							<!-- Container where we'll display the user details -->
-							<!-- <div class="quickstart-user-details-container container">
+							<div class="quickstart-user-details-container container">
 							  Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
 							  <div>Firebase auth <code>currentUser</code> object value:</div>
 							  <pre><code id="quickstart-account-details">null</code></pre>
 							  <div>Google OAuth Access Token:</div>
 							  <pre><code id="quickstart-oauthtoken">null</code></pre>
-							</div> -->
+							</div>
 
 							<div class="gtr col-8 col-12-xsmall mar1">
 								<input type="submit" id="getData" class="btn btn-primary"/>
