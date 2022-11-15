@@ -16,6 +16,7 @@ const firebaseConfig = {						//Firebase App Data required for API
 const app = initializeApp(firebaseConfig);		//Standard database initialization
 const database = getDatabase(app);
 const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
 
 /* ------- Authentication ------- */
 signInWithPopup(auth, provider)
