@@ -46,7 +46,7 @@ const database = getDatabase(app);
     } else {
         firebase.auth().signOut();
     }
-    //document.getElementById('quickstart-sign-in').disabled = true;
+    document.getElementById('quickstart-sign-in').disabled = true;
     }
 
     function initApp() {
@@ -77,6 +77,10 @@ const database = getDatabase(app);
     document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
     }
 
+    window.addEventListener('load', event => {
+        test();
+      });
+      
 /* --------- Real-time Database ----------- */
     getData.addEventListener('click',(e) => {		//Start the script on click for query button
         $('#dataTable td').remove();
