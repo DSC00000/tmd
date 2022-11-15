@@ -8,11 +8,11 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script type= "text/javascript" src="assets\js\rtdb.js"></script>
+		<script type= "module" src="assets\js\rtdb.js"></script>
 	</head>
 
 
-	<body onload='initApp()' class="is-preload">
+	<body class="is-preload">
 		<div id="page-wrapper">
 
 			<!-- Header -->
@@ -52,9 +52,10 @@
 
 						<div class="container">
 							<p>Sign in with your Google account below.</p>
+							<script>initApp()</script>
 				  
 							<!-- Button that handles sign-in/sign-out -->
-							<button onclick=initApp() class="btn btn-primary" id="quickstart-sign-in">Sign in with Google</button>
+							<button class="btn btn-primary" id="quickstart-sign-in">Sign in with Google</button>
 				  
 							<!-- Container where we'll display the user details -->
 							<div class="quickstart-user-details-container container">

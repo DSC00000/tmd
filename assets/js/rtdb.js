@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
 import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
-import "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js"
+import { GoogleAuthProvider, signInWithPopup, getAuth, initApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js"
 
 const firebaseConfig = {						//Firebase App Data required for API
     apiKey: "AIzaSyCYsOexRfQS1eCKXf4UXasY1N8HQ-ckWF0",
