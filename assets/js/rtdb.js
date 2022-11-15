@@ -77,8 +77,6 @@ const database = getDatabase(app);
     document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
     }
 
-initApp();
-
 /* --------- Real-time Database ----------- */
     getData.addEventListener('click',(e) => {		//Start the script on click for query button
         $('#dataTable td').remove();
