@@ -5,22 +5,27 @@ document.getElementById("header").innerHTML = `
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li>
-                <a href="#">Models</a>
-                    <ul>
-                        <li>
-                            <a href="lpx.html">LPX</a>
-                            <a href="rpx.html">RPX</a>
-                            <a href="sbx.html">SBX</a>
-                            <a href="autosaw.html">AutoSaw</a>
-                        </li>
-                    </ul>
-            </li>
             <li><a href="https://texasmachinedesign.zendesk.com">Support</a></li>
+            <li><a href="#" id="models" onClick=modelMenu()>Models</a>
+                <ul id="menu">
+                    <li><a href="lpx.html">LPX</a></li>
+                    <li><a href="rpx.html">RPX</a></li>
+                    <li><a href="sbx.html">SBX</a></li>
+                    <li><a href="autosaw.html">AutoSaw</a></li>
+                </ul>
             <li><a href="#five" class="button primary scrolly">Contact</a></li>
         </ul>
     </nav>
 `
+function modelMenu() {
+        var list = document.getElementById("menu");
+    
+        if (list.style.display == "none"){
+            list.style.display = "inline";
+        }else{
+            list.style.display = "none";
+        }
+    }
 document.getElementById("five").innerHTML = `
     <div class="container">
         <header>
