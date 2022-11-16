@@ -15,7 +15,7 @@ const firebaseConfig = {						//Firebase App Data required for API
 
 const app = initializeApp(firebaseConfig);		//Standard database initialization
 const database = getDatabase(app);
-const auth = getAuth(app);
+const auth = getAuth(app);                    //Standard auth initialization
 const provider = new GoogleAuthProvider();
 
 /* ------- Authentication ------- */
@@ -55,11 +55,11 @@ getRedirectResult(auth)
       
 /* --------- Real-time Database ----------- */
 getData.addEventListener('click',(e) => {		//Start the script on click for query button
-    $('#dataTable td').remove();
+    $('#dataTable td').remove();            //Clear the table before populating
 
     const dbRef = ref(database, `production/`);	//Look specifically at the production collection in the DB
 
-    onValue(dbRef, (snapshot) => {				//Go through each production child and assign it to a single variable
+    onValue(dbRef, (snapshot) => {				  //Go through each {production/} child and assign it to a single variable
         snapshot.forEach((childSnapshot) => {
             const childData = childSnapshot.val();
 
@@ -76,5 +76,5 @@ getData.addEventListener('click',(e) => {		//Start the script on click for query
             
             $(row).appendTo(dataTable)    		//Take the child variable and stick in the HTML table/DOM                        
         });
-    }, {onlyOnce: true});						//Do the above one time
+    }, {onlyOnce: true});						//Do the above 'onValue' one time
 });
