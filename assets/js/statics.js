@@ -6,7 +6,7 @@ document.getElementById("header").innerHTML = `
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="https://texasmachinedesign.zendesk.com">Support</a></li>
-            <li><a href="#" id="models" onClick=modelMenu()>Models</a>
+            <li><a id="models" onClick=modelMenu()>Models</a>
                 <ul id="menu">
                     <li><a href="lpx.html">LPX</a></li>
                     <li><a href="rpx.html">RPX</a></li>
