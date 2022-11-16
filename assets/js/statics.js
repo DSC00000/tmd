@@ -26,6 +26,9 @@ function modelMenu() {
             list.style.display = "none";
         }
     }
+
+modelMenu(); //Calling the function to get it loaded, saving you a click.
+
 document.getElementById("five").innerHTML = `
     <div class="container">
         <header>
