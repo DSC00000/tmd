@@ -31,10 +31,10 @@ document.getElementById("five").innerHTML = `
         <header>
             <h2>Any question, any time.</h2>
         </header>
-        
+            <span>Current customers please use the <a href="https://texasmachinedesign.zendesk.com"><strong>support</strong></a> link to submit parts or service requests.</span>
         <div class="box alt">
             <form class="cta" method="post" data-netlify="true" onSubmit="submit">
-                <div class="col-8 col-12-xsmall pad1">
+                <div class="col-8 col-12-xsmall pad1"></div>
                     <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
                 </div>
                 <div class="col-8 col-12-xsmall pad1">
