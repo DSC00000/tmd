@@ -73,8 +73,25 @@ getData.addEventListener('click',(e) => {		//Start the script on click for query
                                     + childData.Lifetime_Louvers_Stapled_to_Tilt_Rod  	+ "</td><td>"
                                     + childData.Lifetime_Stile_Count 					+ "</td><td>"
                                     + childData.Lifetime_Stile_Linear_Feet 				+ "</td></tr>";
-            
-            $(row).appendTo(dataTable)    		//Take the child variable and stick in the HTML table/DOM                        
+
+            $(row).appendTo(dataTable)    		//Take the child variable and stick in the DOM table                       
         });
     }, {onlyOnce: true});						//Do the above 'onValue' one time
 });
+
+function lCount() {
+    const dbRef = ref(database, `production/`)
+
+    onValue(dbref, (snapshot) => {
+      snapshot.forEach((childSnapshot) => {
+        const childData = childSnapshot.val();
+
+        var louvers = 0;
+
+        louvers += childData.Lifetime_Louver_Count;
+
+        $(louvers).appendTo(louversCount)
+
+      })})}
+
+lCount();
