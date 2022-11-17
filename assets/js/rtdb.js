@@ -78,19 +78,3 @@ getData.addEventListener('click',(e) => {		//Start the script on click for query
         });
     }, {onlyOnce: true});						//Do the above 'onValue' one time
 });
-
-getData.addEventListener('DOMContentLoaded', (e) => {
-  $('#louversCount').remove();
-
-    const lRef = ref(database, `production/`);
-    var louvers = 0;
-
-    onValue(lRef, (snapshot) => {
-      snapshot.forEach((childSnapshot) => {
-        const childData = childSnapshot.val();
-
-        louvers += childData.Lifetime_Louver_Count;
-
-      }, $(louvers).appendTo(louversCount))
-    }, {onlyOnce: true}); 
-});
