@@ -79,7 +79,7 @@ getData.addEventListener('click',(e) => {		//Start the script on click for query
     }, {onlyOnce: true});						//Do the above 'onValue' one time
 });
 
-getData.addEventListener("transitionstart", (e) => {
+getData.addEventListener('DOMContentLoaded', (e) => {
   $('#louversCount').remove();
 
     const dbRef = ref(database, `production/`)
