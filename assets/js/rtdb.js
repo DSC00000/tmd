@@ -79,10 +79,12 @@ getData.addEventListener('click',(e) => {		//Start the script on click for query
     }, {onlyOnce: true});						//Do the above 'onValue' one time
 });
 
-function lCount() {
+getData.addEventListener("DOMContentLoaded", (e) => {
+  $('#louversCount').remove();
+
     const dbRef = ref(database, `production/`)
 
-    onValue(dbref, (snapshot) => {
+    onValue(dbRef, (snapshot) => {
       snapshot.forEach((childSnapshot) => {
         const childData = childSnapshot.val();
 
@@ -92,6 +94,6 @@ function lCount() {
 
         $(louvers).appendTo(louversCount)
 
-      })})}
-
-lCount();
+      })
+    }, {onlyOnce: true}); 
+});
