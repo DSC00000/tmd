@@ -82,10 +82,10 @@ getData.addEventListener('click',(e) => {		//Start the script on click for query
 getData.addEventListener('DOMContentLoaded', (e) => {
   $('#louversCount').remove();
 
-    const dbRef = ref(database, `production/`);
+    const lRef = ref(database, `production/`);
     var louvers = 0;
-    
-    onValue(dbRef, (snapshot) => {
+
+    onValue(lRef, (snapshot) => {
       snapshot.forEach((childSnapshot) => {
         const childData = childSnapshot.val();
 
