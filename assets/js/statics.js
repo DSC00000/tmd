@@ -1,15 +1,3 @@
-function modelMenu() {
-        var list = document.getElementById("menu");
-    
-        if (list.style.display == "none"){
-            list.style.display = "inline";
-        }else{
-            list.style.display = "none";
-        }
-    }
-
-modelMenu(); //Calling the function to get it loaded, saving you a click.
-
 document.getElementById("five").innerHTML = `
     <div class="container">
         <header>
