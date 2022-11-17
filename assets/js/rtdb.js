@@ -92,8 +92,6 @@ getData.addEventListener("load", (e) => {
 
         louvers += childData.Lifetime_Louver_Count;
 
-        $(louvers).appendTo(louversCount)
-
-      })
+      }, $(louvers).appendTo(louversCount))
     }, {onlyOnce: true}); 
 });
