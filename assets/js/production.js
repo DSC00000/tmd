@@ -76,5 +76,5 @@ getData.addEventListener('click',(e) => {		//Start the script on click for query
 
             $(row).appendTo(dataTable)    		//Take the child variable and stick in the DOM table                       
         });
-    }, {onlyOnce: true});						//Do the above 'onValue' one time
+    }, {onlyOnce: true});	
 });
