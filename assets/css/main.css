@@ -247,6 +247,47 @@ input, select, textarea {
 		margin-top: 4em;
 	}
 
+/* Tables */
+table {
+	width: 800px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+th, td {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: #fff;
+}
+
+th {
+	text-align: left;
+}
+
+thead th {
+	background-color: rgba(255,255,255,0.2);
+}
+
+tbody tr:hover{
+	background-color: rgba(255,255,255,0.3);
+}
+
+td {
+	position: relative;
+}
+
+td:before 	{
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: -9999px;
+	bottom: -9999px;
+	background-color: rgba(255,255,255,0.2);
+	z-index: -1;
+}
+
 /* Loader */
 
 	@-moz-keyframes spinner-show {
