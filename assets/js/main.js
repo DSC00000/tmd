@@ -241,15 +241,15 @@
 
 			});
 
+	// Tables
+		$(window).on("load resize ", function() {
+			var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+			$('.tbl-header').css({'padding-right':scrollWidth});
+		}).resize();
+
 	// Banner.
 		var $banner = $('#banner');
 
 		$banner
 			._parallax();
 })(jQuery);
-
-// Tables
-$(window).on("load resize ", function() {
-	var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
-	$('.tbl-header').css({'padding-right':scrollWidth});
-}).resize();
