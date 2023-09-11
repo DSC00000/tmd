@@ -77,7 +77,8 @@ getData.addEventListener('click',(e) => {		//Start the script on click for query
             
             runningTotal += childData.Lifetime_Louver_Count;                                    
 
-            $(row).appendTo(dataTable)    		//Take the child variable and stick in the DOM table                       
+            $(row).appendTo(dataTable)    		//Take the child variable and stick in the DOM table
+            $(runningTotal).appendTo(runningTotal)                       
         });
     }, {onlyOnce: true});	
 });
