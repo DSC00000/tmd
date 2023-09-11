@@ -17,6 +17,7 @@ const app = initializeApp(firebaseConfig);		//Standard database initialization
 const database = getDatabase(app);
 const auth = getAuth(app);                    //Standard auth initialization
 const provider = new GoogleAuthProvider();
+var runningTotal = 0;
 
 /* ------- Authentication ------- */
 signInWithPopup(auth, provider)
@@ -72,7 +73,9 @@ getData.addEventListener('click',(e) => {		//Start the script on click for query
                                     + childData.Lifetime_Louvers_Pinned               	+ "</td><td>"
                                     + childData.Lifetime_Louvers_Stapled_to_Tilt_Rod  	+ "</td><td>"
                                     + childData.Lifetime_Stile_Count 					          + "</td><td>"
-                                    + childData.Lifetime_Stile_Linear_Feet 				      + "</td></tr>";
+                                    + childData.Lifetime_Stile_Linear_Feet 				      + "</td></tr>"
+            
+            runningTotal += childData.Lifetime_Louver_Count;                                    
 
             $(row).appendTo(dataTable)    		//Take the child variable and stick in the DOM table                       
         });
