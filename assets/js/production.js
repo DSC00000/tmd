@@ -73,12 +73,9 @@ getData.addEventListener('click',(e) => {		//Start the script on click for query
                                     + childData.Lifetime_Louvers_Pinned               	+ "</td><td>"
                                     + childData.Lifetime_Louvers_Stapled_to_Tilt_Rod  	+ "</td><td>"
                                     + childData.Lifetime_Stile_Count 					          + "</td><td>"
-                                    + childData.Lifetime_Stile_Linear_Feet 				      + "</td></tr>"
-            
-            runningTotal += childData.Lifetime_Louver_Count;                                    
+                                    + childData.Lifetime_Stile_Linear_Feet 				      + "</td></tr>"                                  
 
-            $(row).appendTo(dataTable)    		//Take the child variable and stick in the DOM table
-            $(runningTotal).appendTo(runningTotal)                       
+            $(row).appendTo(dataTable)    		//Take the child variable and stick in the DOM table                    
         });
     }, {onlyOnce: true});	
 });
